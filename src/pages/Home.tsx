@@ -25,11 +25,6 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated }) => {
           </div>
         ) : (
           <div className="hero-actions">
-             {/*
-            <Link to="/products" className="btn btn-secondary">
-              🔍 Найти оборудование
-            </Link>
-            */}
             <Link to="/products" className="btn btn-primary">
               🛠️ Все товары
             </Link>
@@ -55,15 +50,6 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated }) => {
             <h3>Быстро</h3>
             <p>Находите и бронируйте оборудование за несколько минут</p>
           </div>
-
-          {/*
-          <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
-            <h3>Надежно</h3>
-            <p>Все арендодатели проходят проверку, безопасные сделки</p>
-          </div>
-          */}
-
 
         </div>
       </div>
