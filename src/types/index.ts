@@ -98,17 +98,6 @@ export interface ProductInput {
   equipmentTypeId: string;
 }
 
-export interface AdminRentalContract {
-  id: string;
-  productName: string;
-  customerId: string;
-  ownerId: string;
-  fullPrice: number;
-  startRentDate: string;
-  endRentDate: string;
-  quantity: number;
-}
-
 export interface UserInfo {
   id: string;
   name: string;
@@ -117,4 +106,101 @@ export interface UserInfo {
   dealsAsCustomer: string;
   provider: string;
   role: string;
+}
+
+export interface BookingResponse {
+  id: string;
+  startRentDate: string;
+  endRentDate: string;
+  quantity: number;
+  productName: string;
+  productId: number;
+  rentalPrice: number;
+  bookingDate: string;
+}
+
+export interface BookingContract {
+  id: string;
+  startRentDate: string;
+  endRentDate: string;
+  quantity: number;
+  productName: string;
+  productId: number;
+  rentalPrice: number;
+  bookingDate: string;
+  paid: boolean;
+}
+
+export interface PaymentContract {
+  id: string;
+  idBooking: string;
+  idPayment: string;
+  idRefund: string | null;
+  ownerId: number;
+  customerId: number;
+}
+
+export interface RentalContractUser {
+  id: string;
+  idBooking: string;
+  idPayment: string;
+  idRefund: string | null;
+  ownerId: number;
+  customerId: number;
+}
+
+export interface RefundRequest {
+  rentalId: string;
+  description: string;
+}
+
+export interface RefundResponse {
+  id: string;
+  rentalId: string;
+  description: string;
+  userId: number;
+}
+
+export interface AdminRentalContract {
+  id: string;
+  idBooking: string;
+  idPayment: string;
+  idRefund: string | null;
+  ownerId: number;
+  customerId: number;
+}
+
+export interface BookingContractDetail {
+  id: string;
+  startRentDate: string;
+  endRentDate: string;
+  quantity: number;
+  productName: string;
+  productId: number;
+  rentalPrice: number;
+  bookingDate: string;
+}
+
+export interface PaymentContractDetail {
+  id: string;
+  bookingId: string;
+  fullPrice: number;
+  customerId: number;
+  ownerId: number;
+}
+
+export interface RefundContractDetail {
+  id: string;
+  rentalId: string;
+  description: string;
+  userId: number;
+}
+
+export interface UserRentalContracts {
+  id: string;
+  idBooking: string;
+  idPayment: string;
+  idRefund: string | null;
+  ownerId: number;
+  customerId: number;
 }

@@ -210,7 +210,7 @@ export const getRentalContractsByOwner = async (): Promise<RentalContract[]> => 
 
 
 export const getUserById = async (userId: string): Promise<UserInfo> => {
-  const response = await fetch(`${API_BASE_URL}/admin/find-user?id=${userId}`, {
+  const response = await fetch(`${API_BASE_URL}/admin/find-user/${userId}`, {
     method: 'GET',
     headers: getAuthHeaders(),
   });
@@ -300,5 +300,5 @@ export const getRefundContractById = async (refundId: string): Promise<RefundCon
 };
 
 export const getRentalContractsByUserId = async (userId: string): Promise<UserRentalContracts[]> => {
-  return apiRequest(`/rental-contracts${userId}`);
+  return apiRequest(`/rental-contracts/${userId}`);
 };
